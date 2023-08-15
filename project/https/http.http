@@ -1,0 +1,36 @@
+POST http://127.0.0.1:8000/api/v1/shop/list
+Content-Type: application/json
+
+{
+    "name": "Магазин Обуви 2"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/shop/list
+
+###
+
+POST http://127.0.0.1:8000/api/v1/product/list
+Content-Type: application/json
+
+{
+    "name": "Nike",
+    "content": "Крутые кроссы",
+    "shop": 2
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/product/list
+
+###
+
+PUT http://127.0.0.1:8000/api/v1/product/list/2/
+Content-Type: application/json
+
+{
+    "name": "Nike",
+    "content": "Не очень крутые кроссы",
+    "shop": 2
+}

@@ -1,7 +1,15 @@
 from .models import Shop, Product
 from .serializers import ShopSerializer, ProductSerializer
 from rest_framework.views import APIView
+from rest_framework import generics
 from rest_framework.response import Response
+
+
+# Get и POST
+class ShopAPIList(generics.ListCreateAPIView):
+    queryset = Shop.objects.all()
+    serializer_class = ShopSerializer
+
 
 class ShopAPIView(APIView):
     def get(self, request):
