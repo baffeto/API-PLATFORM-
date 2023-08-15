@@ -13,7 +13,7 @@ class Product(models.Model):
     content = models.TextField()
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    shop = models.ForeignKey(Shop, on_delete=models.PROTECT)
+    shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
         return self.name

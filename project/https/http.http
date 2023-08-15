@@ -1,36 +1,66 @@
-POST http://127.0.0.1:8000/api/v1/shop/list
+### Магазины
+### Получение всех магазинов
+
+GET http://127.0.0.1:8000/api/v1/list/shops/
+
+### Создание магазина
+
+POST http://127.0.0.1:8000/api/v1/list/shops/
 Content-Type: application/json
 
 {
-    "name": "Магазин Обуви 2"
+    "name": "Магазин №3"
 }
 
-###
+### Получение конкретного магазина
 
-GET http://127.0.0.1:8000/api/v1/shop/list
+GET http://127.0.0.1:8000/api/v1/shop/4/
 
-###
+### Изменение магазина
 
-POST http://127.0.0.1:8000/api/v1/product/list
+PUT http://127.0.0.1:8000/api/v1/shop/4/
 Content-Type: application/json
 
 {
-    "name": "Nike",
-    "content": "Крутые кроссы",
-    "shop": 2
+    "name": "Больше не магазин))))"
 }
 
-###
+### Удаление магазина
 
-GET http://127.0.0.1:8000/api/v1/product/list
+DELETE http://127.0.0.1:8000/api/v1/shop/4/
 
-###
+### Продукты
+### Получение всех продуктов
 
-PUT http://127.0.0.1:8000/api/v1/product/list/2/
+GET http://127.0.0.1:8000/api/v1/list/products/
+
+### Создание продукта
+
+POST http://127.0.0.1:8000/api/v1/list/products/
 Content-Type: application/json
 
 {
-    "name": "Nike",
-    "content": "Не очень крутые кроссы",
-    "shop": 2
+    "name": "Продукт а чо",
+    "content": "Самый крутой продукт в мире!!",
+    "shop": 3
 }
+
+### Получение конкретного продукта
+
+GET http://127.0.0.1:8000/api/v1/product/3/
+
+### Изменение продукта
+
+PUT http://127.0.0.1:8000/api/v1/product/3/
+Content-Type: application/json
+
+{
+    "name": "Продукт без а чо",
+    "content": "Продукт крутой рил",
+    "shop": 3
+}
+
+### Удаление продукта
+
+DELETE http://127.0.0.1:8000/api/v1/product/3/
+
