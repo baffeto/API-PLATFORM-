@@ -1,11 +1,13 @@
-from .views import ShopAPIList, ShopAPIDetailView, ProductAPIList, ProductAPIDetailView
-from django.urls import path
+from .views import ShopViewSet, ProductViewSet
+from django.urls import path, include
+from rest_framework import routers
+
+router = routers.SimpleRouter()
+router.register(r'shop', ShopViewSet)
+router.register(r'product', ProductViewSet)
 
 app_name = 'api'
 
 urlpatterns = [
-    path('list/shops/', ShopAPIList.as_view()),
-    path('list/products/', ProductAPIList.as_view()),
-    path('shop/<int:pk>/', ShopAPIDetailView.as_view()),
-    path('product/<int:pk>/', ProductAPIDetailView.as_view()),
+    path('', include(router.urls)), # api/v1/shop | api/v1/product
 ]

@@ -1,20 +1,20 @@
 ### Магазины
 ### Получение всех магазинов
 
-GET http://127.0.0.1:8000/api/v1/list/shops/
+GET http://127.0.0.1:8000/api/v1/shop/
 
 ### Создание магазина
 
-POST http://127.0.0.1:8000/api/v1/list/shops/
+POST http://127.0.0.1:8000/api/v1/shop/
 Content-Type: application/json
 
 {
-    "name": "Магазин №3"
+    "name": "Магазин №4"
 }
 
 ### Получение конкретного магазина
 
-GET http://127.0.0.1:8000/api/v1/shop/4/
+GET http://127.0.0.1:8000/api/v1/shop/2/
 
 ### Изменение магазина
 
@@ -22,21 +22,21 @@ PUT http://127.0.0.1:8000/api/v1/shop/4/
 Content-Type: application/json
 
 {
-    "name": "Больше не магазин))))"
+    "name": "Больше не магазинчик)))))"
 }
 
 ### Удаление магазина
 
-DELETE http://127.0.0.1:8000/api/v1/shop/4/
+DELETE http://127.0.0.1:8000/api/v1/shop/2/
 
 ### Продукты
 ### Получение всех продуктов
 
-GET http://127.0.0.1:8000/api/v1/list/products/
+GET http://127.0.0.1:8000/api/v1/product/
 
 ### Создание продукта
 
-POST http://127.0.0.1:8000/api/v1/list/products/
+POST http://127.0.0.1:8000/api/v1/product/
 Content-Type: application/json
 
 {
@@ -47,11 +47,11 @@ Content-Type: application/json
 
 ### Получение конкретного продукта
 
-GET http://127.0.0.1:8000/api/v1/product/3/
+GET http://127.0.0.1:8000/api/v1/product/5/
 
 ### Изменение продукта
 
-PUT http://127.0.0.1:8000/api/v1/product/3/
+PUT http://127.0.0.1:8000/api/v1/product/5/
 Content-Type: application/json
 
 {
@@ -62,5 +62,5 @@ Content-Type: application/json
 
 ### Удаление продукта
 
-DELETE http://127.0.0.1:8000/api/v1/product/3/
+DELETE http://127.0.0.1:8000/api/v1/product/5/
 

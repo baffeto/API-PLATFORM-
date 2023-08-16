@@ -1,23 +1,29 @@
 from .models import Shop, Product
 from .serializers import ShopSerializer, ProductSerializer
 from rest_framework.views import APIView
-from rest_framework import generics
+from rest_framework import generics, viewsets, mixins
 from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
 
-# Get и Post запросы
-class ShopAPIList(generics.ListCreateAPIView):
+# ModelViewSet - полный функционал GET | POST | PUT | DELETE
+# ReadOnlyModelViewSet - только чтение GET
+
+class ShopViewSet(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
+                  mixins.UpdateModelMixin,
+                  mixins.DestroyModelMixin,
+                  mixins.ListModelMixin,
+                  GenericViewSet):
+    
     queryset = Shop.objects.all()
     serializer_class = ShopSerializer
+
+class ProductViewSet(mixins.CreateModelMixin,
+                    mixins.RetrieveModelMixin,
+                    mixins.UpdateModelMixin,
+                    mixins.DestroyModelMixin,
+                    mixins.ListModelMixin,
+                    GenericViewSet):
     
-class ProductAPIList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
-# Get (определенный) / PUT / DELETE (работаем с определенным объектом)    
-class ShopAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Shop.objects.all()
-    serializer_class = ShopSerializer 
-
-class ProductAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer 
