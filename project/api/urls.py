@@ -1,4 +1,4 @@
-from .views import ShopViewSet, ProductViewSet
+from .views import ProductViewSet, ShopAPIDestroy, ShopAPIList, ShopAPIUpdate
 from django.urls import path, include
 from rest_framework import routers
 
@@ -25,7 +25,7 @@ from rest_framework import routers
 
 # router = MyCustomRouter()
 router = routers.DefaultRouter()
-router.register(r'shop', ShopViewSet, basename='shop')
+# router.register(r'shop', ShopViewSet, basename='shop')
 router.register(r'product', ProductViewSet)
 
 print(router.urls)
@@ -34,4 +34,7 @@ app_name = 'api'
 
 urlpatterns = [
     path('', include(router.urls)), # api/v1/shop | api/v1/product
+    path('shop/', ShopAPIList.as_view()),
+    path('shop/<int:pk>/', ShopAPIUpdate.as_view()),
+    path('shop/delete/<int:pk>/', ShopAPIDestroy.as_view())
 ]

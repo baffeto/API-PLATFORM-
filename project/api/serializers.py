@@ -3,9 +3,11 @@ from .models import Shop, Product
 
 
 class ShopSerializer(serializers.ModelSerializer):
+    owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    
     class Meta:
         model = Shop
-        fields = ('name', 'shop_established')
+        fields = ('name', 'shop_established', 'owner')
     
         
 class ProductSerializer(serializers.ModelSerializer):

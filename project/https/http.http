@@ -14,11 +14,11 @@ Content-Type: application/json
 
 ### Получение конкретного магазина
 
-GET http://127.0.0.1:8000/api/v1/shop/2/
+GET http://127.0.0.1:8000/api/v1/shop/8/
 
 ### Изменение магазина
 
-PUT http://127.0.0.1:8000/api/v1/shop/4/
+PUT http://127.0.0.1:8000/api/v1/shop/8/
 Content-Type: application/json
 
 {
