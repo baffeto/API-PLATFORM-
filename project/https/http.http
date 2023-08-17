@@ -9,7 +9,7 @@ POST http://127.0.0.1:8000/api/v1/shop/
 Content-Type: application/json
 
 {
-    "name": "Магазин №4"
+    "name": "Магазин №821"
 }
 
 ### Получение конкретного магазина
@@ -40,7 +40,7 @@ POST http://127.0.0.1:8000/api/v1/product/
 Content-Type: application/json
 
 {
-    "name": "Продукт а чо",
+    "name": "Продукт",
     "content": "Самый крутой продукт в мире!!",
     "shop": 3
 }
