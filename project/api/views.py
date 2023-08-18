@@ -5,7 +5,8 @@ from rest_framework import generics, viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 
 # ModelViewSet - полный функционал GET | POST | PUT | DELETE
@@ -56,7 +57,8 @@ class ShopAPIList(generics.ListCreateAPIView):
 class ShopAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset =  Shop.objects.all()
     serializer_class = ShopSerializer
-    permission_classes = (IsOwnerOrReadOnly, )
+    permission_classes = (IsAuthenticated, )
+    authentication_classes = (TokenAuthentication, )
     
 class ShopAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset =  Shop.objects.all()

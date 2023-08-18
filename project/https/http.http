@@ -15,6 +15,7 @@ Content-Type: application/json
 ### Получение конкретного магазина
 
 GET http://127.0.0.1:8000/api/v1/shop/8/
+Authorization: Token d172177844b4f12e4ad651f7b5fe80d3385f9304
 
 
 ### Изменение магазина
@@ -65,3 +66,28 @@ Content-Type: application/json
 
 DELETE http://127.0.0.1:8000/api/v1/product/5/
 
+###
+
+POST http://127.0.0.1:8000/api/v1/auth/users/
+Content-Type: application/json
+
+{
+    "username": "root1",
+    "password": "vanekkkkkk"
+}
+
+###
+
+POST http://127.0.0.1:8000/auth/token/login/
+Content-Type: application/json
+
+{
+    "username": "root1",
+    "password": "vanekkkkkk"
+}
+
+###
+
+POST http://127.0.0.1:8000/auth/token/logout/
+Content-Type: application/json
+Authorization: Token d2fb8d45196b2769ed0b1fd00b113dbedbd412a9
