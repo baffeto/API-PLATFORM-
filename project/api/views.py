@@ -8,45 +8,6 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
-
-# ModelViewSet - полный функционал GET | POST | PUT | DELETE
-# ReadOnlyModelViewSet - только чтение GET
-
-# class ShopViewSet(mixins.CreateModelMixin,
-#                   mixins.RetrieveModelMixin,
-#                   mixins.UpdateModelMixin,
-#                   mixins.DestroyModelMixin,
-#                   mixins.ListModelMixin,
-#                   GenericViewSet):
-    
-#     # queryset = Shop.objects.all()
-#     serializer_class = ShopSerializer
-    
-#     def get_queryset(self):
-#         pk = self.kwargs.get('pk')
-        
-#         if not pk:
-#             return Shop.objects.all()[:6]
-        
-#         return Shop.objects.filter(pk=pk)
-    
-#     @action(methods=['get'], detail=True)
-#     def product(self, request, pk=None):
-#         # http://127.0.0.1:8000/api/v1/shop/4/product/
-#         product = Product.objects.get(pk=pk)
-#         return Response({
-#             'product': product.name
-#         })
-
-class ProductViewSet(mixins.CreateModelMixin,
-                     mixins.RetrieveModelMixin,
-                     mixins.UpdateModelMixin,
-                     mixins.DestroyModelMixin,
-                     mixins.ListModelMixin,
-                     GenericViewSet):
-    
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
     
     
 class ShopAPIList(generics.ListCreateAPIView):
@@ -63,4 +24,19 @@ class ShopAPIUpdate(generics.RetrieveUpdateAPIView):
 class ShopAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset =  Shop.objects.all()
     serializer_class = ShopSerializer
+    permission_classes = (IsAdminOrReadOnly, )
+    
+class ProductAPIList(generics.ListCreateAPIView):
+    queryset =  Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    
+class ProductAPIUpdate(generics.RetrieveUpdateAPIView):
+    queryset =  Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticated, )
+    
+class ProductAPIDestroy(generics.RetrieveDestroyAPIView):
+    queryset =  Product.objects.all()
+    serializer_class = ProductSerializer
     permission_classes = (IsAdminOrReadOnly, )
