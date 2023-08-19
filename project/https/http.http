@@ -51,7 +51,7 @@ Authorization: Token cf1ab8fde87c45db6b65748ec1d51f972e47320d
 ### Получение конкретного продукта
 
 GET http://127.0.0.1:8000/api/v1/product/8/
-Authorization: Token cf1ab8fde87c45db6b65748ec1d51f972e47320d
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNDQyNDg3LCJpYXQiOjE2OTI0NDE5NDAsImp0aSI6ImQ3ZmU1YWI2ODJmNzQyOGQ5NTEyNjJiYzA2YjIyZjZmIiwidXNlcl9pZCI6MX0.uNH8yAf3epq2KOk_GgtvL_TF3zNJua71zrewqv0hjwE
 
 ### Изменение продукта
 

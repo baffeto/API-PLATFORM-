@@ -19,7 +19,7 @@ class ShopAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset =  Shop.objects.all()
     serializer_class = ShopSerializer
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (TokenAuthentication, )
+    # authentication_classes = (TokenAuthentication, )
     
 class ShopAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset =  Shop.objects.all()
