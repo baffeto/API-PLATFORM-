@@ -34,13 +34,13 @@ DELETE http://127.0.0.1:8000/api/v1/shop/2/
 ### Продукты
 ### Получение всех продуктов
 
-GET http://127.0.0.1:8000/api/v1/product/
+GET http://127.0.0.1:8000/api/v1/product/?page=2&page_size=2
 
 ### Создание продукта
 
 POST http://127.0.0.1:8000/api/v1/product/
 Content-Type: application/json
-Authorization: Token cf1ab8fde87c45db6b65748ec1d51f972e47320d
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNTI1NTAxLCJpYXQiOjE2OTI1MjUyMDEsImp0aSI6ImExYWIxM2U1ZTkxODQ4NDk4OGMxYTVkMGJlN2NiMjgzIiwidXNlcl9pZCI6M30.bEY6nph8Qm7U4_ynQDEuel1krBnZLByT21JipQkggkk
 
 {
     "name": "Продукт",
@@ -49,11 +49,11 @@ Authorization: Token cf1ab8fde87c45db6b65748ec1d51f972e47320d
 }
 
 ### Получение конкретного продукта
-
+  
 GET http://127.0.0.1:8000/api/v1/product/8/
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNDQyNDg3LCJpYXQiOjE2OTI0NDE5NDAsImp0aSI6ImQ3ZmU1YWI2ODJmNzQyOGQ5NTEyNjJiYzA2YjIyZjZmIiwidXNlcl9pZCI6MX0.uNH8yAf3epq2KOk_GgtvL_TF3zNJua71zrewqv0hjwE
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNTI1NTAxLCJpYXQiOjE2OTI1MjUyMDEsImp0aSI6ImExYWIxM2U1ZTkxODQ4NDk4OGMxYTVkMGJlN2NiMjgzIiwidXNlcl9pZCI6M30.bEY6nph8Qm7U4_ynQDEuel1krBnZLByT21JipQkggkk
 
-### Изменение продукта
+###
 
 PUT http://127.0.0.1:8000/api/v1/product/8/
 Content-Type: application/json
@@ -76,17 +76,26 @@ POST http://127.0.0.1:8000/api/v1/auth/users/
 Content-Type: application/json
 
 {
-    "username": "root1",
+    "username": "root12",
     "password": "vanekkkkkk"
 }
 
+### Получение токенов
+
+POST http://127.0.0.1:8000/api/v1/token/
+Content-Type: application/json
+
+{
+    "username": "root12",
+    "password": "vanekkkkkk"
+}
 ###
 
 POST http://127.0.0.1:8000/auth/token/login/
 Content-Type: application/json
 
 {
-    "username": "root1",
+    "username": "root12",
     "password": "vanekkkkkk"
 }
 

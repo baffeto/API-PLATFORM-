@@ -1,5 +1,3 @@
-from .models import Shop, Product
-from .serializers import ShopSerializer, ProductSerializer
 from rest_framework.views import APIView
 from rest_framework import generics, viewsets, mixins
 from rest_framework.decorators import action
@@ -8,6 +6,9 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
+from .pagination import ProductAPIListPagination
+from .models import Shop, Product
+from .serializers import ShopSerializer, ProductSerializer
     
     
 class ShopAPIList(generics.ListCreateAPIView):
@@ -19,7 +20,6 @@ class ShopAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset =  Shop.objects.all()
     serializer_class = ShopSerializer
     permission_classes = (IsAuthenticated, )
-    # authentication_classes = (TokenAuthentication, )
     
 class ShopAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset =  Shop.objects.all()
@@ -30,6 +30,7 @@ class ProductAPIList(generics.ListCreateAPIView):
     queryset =  Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
+    pagination_class = ProductAPIListPagination
     
 class ProductAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset =  Product.objects.all()
