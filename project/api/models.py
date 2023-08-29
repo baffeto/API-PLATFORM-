@@ -19,3 +19,8 @@ class Product(models.Model):
     
     def __str__(self) -> str:
         return self.name
+    
+class Book(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.PositiveIntegerField()
+    

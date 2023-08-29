@@ -40,10 +40,10 @@ GET http://127.0.0.1:8000/api/v1/product/?page=2&page_size=2
 
 POST http://127.0.0.1:8000/api/v1/product/
 Content-Type: application/json
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNTI1NTAxLCJpYXQiOjE2OTI1MjUyMDEsImp0aSI6ImExYWIxM2U1ZTkxODQ4NDk4OGMxYTVkMGJlN2NiMjgzIiwidXNlcl9pZCI6M30.bEY6nph8Qm7U4_ynQDEuel1krBnZLByT21JipQkggkk
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzMzIzNTQwLCJpYXQiOjE2OTMzMjMyNDAsImp0aSI6Ijg3ZDc3NjJkMDlhZjRhZGI5NTFmZDUxYWQ4NjAyNThmIiwidXNlcl9pZCI6M30.2pMzLgK2IlqbstNsaP2lHMw8Kctb4_GB4dC1DKJJHhw
 
 {
-    "name": "Продукт",
+    "name": "Продуктfsdfdsfs",
     "content": "Самый крутой продукт в мире!!",
     "shop": 3
 }
